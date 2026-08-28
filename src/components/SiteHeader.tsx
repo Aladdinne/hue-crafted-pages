@@ -1,0 +1,92 @@
+import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/souitech-logo.png.asset.json";
+
+const links = [
+  { to: "/", label: "Accueil" },
+  { to: "/services", label: "Services" },
+  { to: "/expertise", label: "Expertise" },
+  { to: "/contact", label: "Contact" },
+] as const;
+
+export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-background/90 shadow-[var(--shadow-card)] backdrop-blur-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8">
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <img
+            src={logo.url}
+            alt="SOUiTECH Engineering"
+            width={200}
+            height={78}
+            className="h-11 w-auto md:h-13"
+          />
+        </Link>
+
+        <nav className="hidden items-center gap-9 md:flex">
+          {links.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="group relative text-sm font-semibold uppercase tracking-[0.14em] text-foreground/80 transition-colors hover:text-primary"
+              activeProps={{ className: "text-primary" }}
+              activeOptions={{ exact: l.to === "/" }}
+            >
+              {l.label}
+              <span className="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-primary-foreground shadow-[var(--shadow-card)] transition-all duration-300 hover:bg-accent hover:shadow-[var(--shadow-elevated)]"
+          >
+            Nous contacter
+          </Link>
+        </nav>
+
+        <button
+          type="button"
+          aria-label="Menu"
+          onClick={() => setOpen((v) => !v)}
+          className="rounded-md border border-border p-2 text-foreground md:hidden"
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
+      </div>
+
+      {open && (
+        <nav className="animate-fade-in border-t border-border bg-background/98 px-5 py-4 backdrop-blur-md md:hidden">
+          {links.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              onClick={() => setOpen(false)}
+              className="block border-b border-border/60 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/85"
+              activeProps={{ className: "text-accent" }}
+              activeOptions={{ exact: l.to === "/" }}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+      )}
+    </header>
+  );
+}
