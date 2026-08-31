@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import logoAkzoNobel from "@/assets/logos/akzonobel.png.asset.json";
+import logoSonatrach from "@/assets/logos/sonatrach.png.asset.json";
+import logoTotal from "@/assets/logos/totalenergies.png.asset.json";
+import logoActiis from "@/assets/logos/actiis.png.asset.json";
+import logoAgil from "@/assets/logos/agil.png.asset.json";
+import logoOmv from "@/assets/logos/omv.png.asset.json";
+import logoSitep from "@/assets/logos/sitep.png.asset.json";
+import logoSinoma from "@/assets/logos/sinoma-jbeloust.png.asset.json";
+import logoSotacib from "@/assets/logos/sotacib.png.asset.json";
+import logoEni from "@/assets/logos/eni.png.asset.json";
+import logoAstral from "@/assets/logos/astral.jpg.asset.json";
 
 export const Route = createFileRoute("/expertise")({
   head: () => ({
