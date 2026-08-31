@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Globe, Mail, Phone, FileText } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import logo from "@/assets/souitech-logo.png.asset.json";
+import logo from "@/assets/souitech-logo.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -66,7 +66,7 @@ function Contact() {
         <Reveal>
           <div className="flex justify-center">
             <img
-              src={logo.url}
+              src={logo}
               alt="SOUiTECH Engineering"
               width={520}
               height={203}
