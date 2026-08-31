@@ -34,6 +34,7 @@ export function SiteHeader() {
             alt="SOUiTECH Engineering"
             width={200}
             height={78}
+            loading="lazy"
             className="h-11 w-auto md:h-13"
           />
         </Link>
