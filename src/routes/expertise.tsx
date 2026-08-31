@@ -123,16 +123,33 @@ function Expertise() {
             </p>
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {clients.map((c, i) => (
-              <Reveal key={c} delay={(i % 8) * 60}>
-                <div className="group flex h-24 items-center justify-center rounded-md border border-border bg-card px-4 text-center transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
-                  <span className="font-display text-lg font-semibold uppercase tracking-wide text-foreground/80 transition-colors group-hover:text-primary">
-                    {c}
-                  </span>
+            {clientLogos.map((c, i) => (
+              <Reveal key={c.name} delay={(i % 8) * 60}>
+                <div className="flex h-24 items-center justify-center rounded-md border border-border bg-card px-5 py-3 transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
+                  <img
+                    src={c.src}
+                    alt={`Logo ${c.name}`}
+                    width={180}
+                    height={72}
+                    loading="lazy"
+                    className="max-h-16 w-auto max-w-full object-contain transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </Reveal>
             ))}
           </div>
+          <Reveal delay={120}>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              {otherClients.map((c) => (
+                <span
+                  key={c}
+                  className="font-display text-base font-semibold uppercase tracking-wide text-foreground/60"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>
