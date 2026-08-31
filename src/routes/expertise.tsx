@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 
-const logoModules = import.meta.glob("../assets/logos/*.asset.json", {
+const logoModules = import.meta.glob("../assets/logos/*", {
   eager: true,
   import: "default",
 }) as Record<string, { url: string }>;
