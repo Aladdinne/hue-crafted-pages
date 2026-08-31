@@ -23,10 +23,8 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/90 shadow-[var(--shadow-card)] backdrop-blur-md"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 bg-background/95 backdrop-blur-md transition-all duration-500 ${
+        scrolled ? "shadow-[var(--shadow-card)]" : "border-b border-border/60"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8">
@@ -45,12 +43,12 @@ export function SiteHeader() {
             <Link
               key={l.to}
               to={l.to}
-              className="group relative text-sm font-semibold uppercase tracking-[0.14em] text-foreground/80 transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
+              className="group relative text-sm font-semibold uppercase tracking-[0.14em] text-bordeaux transition-colors hover:text-accent"
+              activeProps={{ className: "text-accent" }}
               activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
-              <span className="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-bordeaux transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
           <Link
@@ -78,7 +76,7 @@ export function SiteHeader() {
               key={l.to}
               to={l.to}
               onClick={() => setOpen(false)}
-              className="block border-b border-border/60 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/85"
+              className="block border-b border-border/60 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-bordeaux"
               activeProps={{ className: "text-accent" }}
               activeOptions={{ exact: l.to === "/" }}
             >
