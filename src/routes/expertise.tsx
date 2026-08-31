@@ -109,7 +109,7 @@ const software = [
   "PV Elite",
 ];
 
-const clientLogos = [
+/*const clientLogos = [
   { name: "OMV", src: logoOmv.url },
   { name: "TotalEnergies", src: logoTotal.url },
   { name: "Eni", src: logoEni.url },
@@ -121,7 +121,7 @@ const clientLogos = [
   { name: "Sinoma Cement — Ciments de Jbel Oust", src: logoSinoma.url },
   { name: "AkzoNobel", src: logoAkzoNobel.url },
   { name: "Astral", src: logoAstral.url },
-];
+];*/
 
 const otherClients = [
   "Lafarge",
