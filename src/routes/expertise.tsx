@@ -1,16 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import logoAkzoNobel from "@/assets/logos/akzonobel.png.asset.json";
-import logoSonatrach from "@/assets/logos/sonatrach.png.asset.json";
-import logoTotal from "@/assets/logos/totalenergies.png.asset.json";
-import logoActiis from "@/assets/logos/actiis.png.asset.json";
-import logoAgil from "@/assets/logos/agil.png.asset.json";
-import logoOmv from "@/assets/logos/omv.png.asset.json";
-import logoSitep from "@/assets/logos/sitep.png.asset.json";
-import logoSinoma from "@/assets/logos/sinoma-jbeloust.png.asset.json";
-import logoSotacib from "@/assets/logos/sotacib.png.asset.json";
-import logoEni from "@/assets/logos/eni.png.asset.json";
-import logoAstral from "@/assets/logos/astral.jpg.asset.json";
+
+const logoModules = import.meta.glob("../assets/logos/*.asset.json", {
+  eager: true,
+  import: "default",
+}) as Record<string, { url: string }>;
+
+const logoNames: Record<string, string> = {
+  "agil.png": "Agil",
+  "agoco.png": "Arabian Gulf Oil Company",
+  "akzonobel.png": "AkzoNobel",
+  "alkimia.png": "Alkimia",
+  "ansaldo.png": "Ansaldo Energia",
+  "astral.jpg": "Astral",
+  "bakerhicks.png": "BakerHicks",
+  "butagaz.png": "BUTAGAZ",
+  "actiis.png": "Actiis Groupe",
+  "cftp.png": "CFTP",
+  "cipem.png": "CIPEM",
+  "cntic.png": "CNTIC",
+  "cpg.png": "CPG",
+  "ekium.png": "EKIUM",
+  "emco.png": "EMCO",
+  "eni.png": "Eni",
+  "eppm.png": "EPPM",
+  "etap.png": "ETAP",
+  "gct.png": "Groupe Chimique Tunisien",
+  "ginor.png": "GINOR",
+  "gpp.png": "GPP",
+  "gsfc.png": "GSFC",
+  "gulf-oil-libya.png": "Gulf Oil & Gas Processing Co.",
+  "halk-el-menzel.png": "Halk El Menzel",
+  "i2e.png": "I2E",
+  "maretap.png": "Maretap",
+  "mellitah-libya.png": "Mellitah Oil & Gas — Libya",
+  "mellitah-og.png": "Mellitah Oil & Gas",
+  "meri.png": "MERI Hal Group",
+  "npi.png": "NPI",
+  "ola-energy.png": "OLA Energy",
+  "omv.png": "OMV",
+  "ortec.png": "Ortec Group",
+  "perenco.png": "Perenco",
+  "phosphea.png": "Phosphea",
+  "ponticelli.png": "Ponticelli",
+  "sanofi.png": "Sanofi",
+  "saudi-aramco.png": "Saudi Aramco",
+  "serept.png": "Serept",
+  "serinus.png": "Serinus Energy",
+  "sinoma-jbeloust.png": "Sinoma Cement — Ciments de Jbel Oust",
+  "sitep.png": "SITEP",
+  "snim.png": "Snim",
+  "sodeps.png": "SODEPS",
+  "sonatrach.png": "Sonatrach",
+  "sonede.png": "SONEDE",
+  "sotacib.png": "SOTACIB",
+  "sotrapil.png": "Sotrapil",
+  "sppc.png": "SPPC",
+  "staroil.png": "Staroil",
+  "stia.png": "STIA",
+  "technip.png": "Technip",
+  "teci.png": "TECI",
+  "tic-group.png": "TIC Group",
+  "tifert.png": "TIFERT",
+  "totalenergies.png": "TotalEnergies",
+  "tps.png": "TPS",
+  "vivo-energy.png": "Vivo Energy Tunisie",
+  "wacom.png": "WACOM",
+  "zallaf.jpeg": "Zallaf Libya Oil & Gas",
+};
+
+const clientLogos = Object.entries(logoModules)
+  .map(([path, mod]) => {
+    const file = path.split("/").pop()!.replace(/\.asset\.json$/, "");
+    return { src: mod.url, name: logoNames[file] ?? "Client SOUiTECH" };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
 export const Route = createFileRoute("/expertise")({
   head: () => ({
