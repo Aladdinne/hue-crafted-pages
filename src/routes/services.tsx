@@ -33,6 +33,7 @@ const blocks = [
       "Électricité & Instrumentation",
       "Équipements industriels",
       "Utilités & installations process",
+      "Étude d'installation photovoltaïque",
     ],
   },
   {

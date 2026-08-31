@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import logoAkzoNobel from "@/assets/logos/akzonobel.png.asset.json";
+import logoSonatrach from "@/assets/logos/sonatrach.png.asset.json";
+import logoTotal from "@/assets/logos/totalenergies.png.asset.json";
+import logoActiis from "@/assets/logos/actiis.png.asset.json";
+import logoAgil from "@/assets/logos/agil.png.asset.json";
+import logoOmv from "@/assets/logos/omv.png.asset.json";
+import logoSitep from "@/assets/logos/sitep.png.asset.json";
+import logoSinoma from "@/assets/logos/sinoma-jbeloust.png.asset.json";
+import logoSotacib from "@/assets/logos/sotacib.png.asset.json";
+import logoEni from "@/assets/logos/eni.png.asset.json";
+import logoAstral from "@/assets/logos/astral.jpg.asset.json";
 
 export const Route = createFileRoute("/expertise")({
   head: () => ({
@@ -34,31 +45,33 @@ const software = [
   "PV Elite",
 ];
 
-const clients = [
-  "OMV",
+const clientLogos = [
+  { name: "OMV", src: logoOmv.url },
+  { name: "TotalEnergies", src: logoTotal.url },
+  { name: "Eni", src: logoEni.url },
+  { name: "Agil", src: logoAgil.url },
+  { name: "Sonatrach", src: logoSonatrach.url },
+  { name: "STEP", src: logoSitep.url },
+  { name: "Actiis Groupe", src: logoActiis.url },
+  { name: "SOTACIB", src: logoSotacib.url },
+  { name: "Sinoma Cement — Ciments de Jbel Oust", src: logoSinoma.url },
+  { name: "AkzoNobel", src: logoAkzoNobel.url },
+  { name: "Astral", src: logoAstral.url },
+];
+
+const otherClients = [
   "Lafarge",
   "BIA",
-  "TotalEnergies",
-  "Eni",
   "Clarke Energy",
-  "Agil",
   "Sotuver",
-  "Sonatrach",
-  "STEP",
   "SMIP",
   "SIA",
   "Perenco",
   "Saica",
   "Vivo Energy Tunisie",
   "SB Trust",
-  "Actiis Groupe",
   "Process Safety Engineering",
-  "SOTACIB",
   "Cementos Molins",
-  "Sinoma Cement Co. Ltd",
-  "Ciments de Jbel Oust",
-  "AkzoNobel",
-  "Astral",
 ];
 
 function Expertise() {
@@ -110,16 +123,33 @@ function Expertise() {
             </p>
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {clients.map((c, i) => (
-              <Reveal key={c} delay={(i % 8) * 60}>
-                <div className="group flex h-24 items-center justify-center rounded-md border border-border bg-card px-4 text-center transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
-                  <span className="font-display text-lg font-semibold uppercase tracking-wide text-foreground/80 transition-colors group-hover:text-primary">
-                    {c}
-                  </span>
+            {clientLogos.map((c, i) => (
+              <Reveal key={c.name} delay={(i % 8) * 60}>
+                <div className="flex h-24 items-center justify-center rounded-md border border-border bg-card px-5 py-3 transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
+                  <img
+                    src={c.src}
+                    alt={`Logo ${c.name}`}
+                    width={180}
+                    height={72}
+                    loading="lazy"
+                    className="max-h-16 w-auto max-w-full object-contain transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </Reveal>
             ))}
           </div>
+          <Reveal delay={120}>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              {otherClients.map((c) => (
+                <span
+                  key={c}
+                  className="font-display text-base font-semibold uppercase tracking-wide text-foreground/60"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>

@@ -38,6 +38,7 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --color-navy: var(--navy);
+  --color-bordeaux: var(--bordeaux);
   --color-navy-deep: var(--navy-deep);
   --color-navy-foreground: var(--navy-foreground);
   --color-steel: var(--steel);
@@ -70,6 +71,9 @@
   --navy: oklch(0.32 0.13 264);
   --navy-deep: oklch(0.21 0.09 265);
   --navy-foreground: oklch(0.98 0.005 250);
+
+  /* Rouge bordeaux */
+  --bordeaux: oklch(0.42 0.13 18);
 
   /* Industrial red accent */
   --accent: oklch(0.52 0.21 27);
