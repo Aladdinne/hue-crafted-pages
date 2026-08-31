@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 
-const logoModules = import.meta.glob("../assets/logos/*", {
+const logoModules = import.meta.glob("../assets/logos/*.{png,jpg,jpeg}", {
   eager: true,
   import: "default",
-}) as Record<string, { url: string }>;
+}) as Record<string, string>;
 
 const logoNames: Record<string, string> = {
   "agil.png": "Agil",
@@ -70,9 +70,9 @@ const logoNames: Record<string, string> = {
 };
 
 const clientLogos = Object.entries(logoModules)
-  .map(([path, mod]) => {
-    const file = path.split("/").pop()!.replace(/\.asset\.json$/, "");
-    return { src: mod.url, name: logoNames[file] ?? "Client SOUiTECH" };
+  .map(([path, src]) => {
+    const file = path.split("/").pop()!;
+    return { src, name: logoNames[file] ?? "Client SOUiTECH" };
   })
   .sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
