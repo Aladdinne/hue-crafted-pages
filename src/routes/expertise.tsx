@@ -45,31 +45,33 @@ const software = [
   "PV Elite",
 ];
 
-const clients = [
-  "OMV",
+const clientLogos = [
+  { name: "OMV", src: logoOmv.url },
+  { name: "TotalEnergies", src: logoTotal.url },
+  { name: "Eni", src: logoEni.url },
+  { name: "Agil", src: logoAgil.url },
+  { name: "Sonatrach", src: logoSonatrach.url },
+  { name: "STEP", src: logoSitep.url },
+  { name: "Actiis Groupe", src: logoActiis.url },
+  { name: "SOTACIB", src: logoSotacib.url },
+  { name: "Sinoma Cement — Ciments de Jbel Oust", src: logoSinoma.url },
+  { name: "AkzoNobel", src: logoAkzoNobel.url },
+  { name: "Astral", src: logoAstral.url },
+];
+
+const otherClients = [
   "Lafarge",
   "BIA",
-  "TotalEnergies",
-  "Eni",
   "Clarke Energy",
-  "Agil",
   "Sotuver",
-  "Sonatrach",
-  "STEP",
   "SMIP",
   "SIA",
   "Perenco",
   "Saica",
   "Vivo Energy Tunisie",
   "SB Trust",
-  "Actiis Groupe",
   "Process Safety Engineering",
-  "SOTACIB",
   "Cementos Molins",
-  "Sinoma Cement Co. Ltd",
-  "Ciments de Jbel Oust",
-  "AkzoNobel",
-  "Astral",
 ];
 
 function Expertise() {
