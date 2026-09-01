@@ -109,19 +109,6 @@ const software = [
   "PV Elite",
 ];
 
-/*const clientLogos = [
-  { name: "OMV", src: logoOmv.url },
-  { name: "TotalEnergies", src: logoTotal.url },
-  { name: "Eni", src: logoEni.url },
-  { name: "Agil", src: logoAgil.url },
-  { name: "Sonatrach", src: logoSonatrach.url },
-  { name: "STEP", src: logoSitep.url },
-  { name: "Actiis Groupe", src: logoActiis.url },
-  { name: "SOTACIB", src: logoSotacib.url },
-  { name: "Sinoma Cement — Ciments de Jbel Oust", src: logoSinoma.url },
-  { name: "AkzoNobel", src: logoAkzoNobel.url },
-  { name: "Astral", src: logoAstral.url },
-];*/
 
 const otherClients = [
   "Lafarge",
