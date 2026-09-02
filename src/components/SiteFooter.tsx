@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Globe } from "lucide-react";
-import logo from "@/assets/souitech-logo.png.asset.json";
+import logo from "@/assets/souitech-logo.png";
 import { useLang } from "@/i18n/LanguageProvider";
 
 export function SiteFooter() {
