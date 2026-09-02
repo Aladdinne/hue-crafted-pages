@@ -134,11 +134,11 @@ function Expertise() {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <h1 className="text-5xl font-bold uppercase text-navy-foreground md:text-6xl">
-              {t.expertisePage.title}
+              {t.expertise.title}
             </h1>
             <div className="rule-accent mt-5" />
             <p className="mt-6 max-w-2xl text-navy-foreground/85">
-              {t.expertisePage.intro}
+              {t.expertise.intro}
             </p>
           </Reveal>
         </div>
@@ -146,7 +146,7 @@ function Expertise() {
 
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8">
         <Reveal>
-          <h2 className="text-4xl font-bold uppercase">{t.expertisePage.softwareTitle}</h2>
+          <h2 className="text-4xl font-bold uppercase">{t.expertise.softwareTitle}</h2>
           <div className="rule-accent mt-4" />
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -166,10 +166,10 @@ function Expertise() {
       <section className="steel-gradient">
         <div className="mx-auto max-w-7xl px-5 py-24 md:px-8">
           <Reveal>
-            <h2 className="text-4xl font-bold uppercase">{t.expertisePage.clientsTitle}</h2>
+            <h2 className="text-4xl font-bold uppercase">{t.expertise.clientsTitle}</h2>
             <div className="rule-accent mt-4" />
             <p className="mt-6 max-w-2xl text-muted-foreground">
-              {t.expertisePage.clientsIntro}
+              {t.expertise.clientsIntro}
             </p>
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
