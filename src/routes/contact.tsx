@@ -144,7 +144,7 @@ function Contact() {
                           {/* Phone + WhatsApp indicator */}
                           {isWhatsapp && (
                             <span className="text-lg leading-none">
-                              📞💬
+                              {/*   📞💬 */}
                             </span>
                           )}
 
