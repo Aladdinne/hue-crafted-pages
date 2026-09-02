@@ -141,12 +141,12 @@ function Contact() {
                           href={item.href}
                           className="flex items-center gap-2 font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
                         >
-                          {/* Phone + WhatsApp indicator */}
+                          {/* Phone + WhatsApp indicator 
                           {isWhatsapp && (
                             <span className="text-lg leading-none">
                               📞💬
                             </span>
-                          )}
+                          )} */}
 
                           <span>{item.text}</span>
 
