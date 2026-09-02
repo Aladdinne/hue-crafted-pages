@@ -98,7 +98,7 @@ function Home() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {t.home.domains.map((d, i) => {
-            const Icon = domainIcons[i];
+            const Icon = domainIcons[i] ?? Factory;
             return (
               <Reveal key={d.title} delay={i * 80}>
                 <article className="card-industrial h-full p-7">
