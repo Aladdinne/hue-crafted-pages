@@ -87,8 +87,8 @@ const fr: Dict = {
       "Une équipe expérimentée et multidisciplinaire qui intervient depuis les phases d'étude et de conception jusqu'à l'assistance technique et au suivi des réalisations.",
     domains: [
       { title: "Piping & réseaux industriels", text: "Conception, isométriques et supportage." },
-      { title: "Structures métalliques", text: "Charpentes, plateformes et ossatures." },
-      { title: "Génie civil industriel", text: "Fondations, massifs et ouvrages." },
+      { title: "Génie civil industriel & Structures métalliques", text: "Charpentes, Fondations, massifs, ouvrages, plateformes et ossatures." },
+      { title: "Étude Hazop", text: "Identification des dangers, analyse des déviations et évaluation des risques process." },
       { title: "Électricité & Instrumentation", text: "Schémas, boucles et implantations." },
       { title: "Équipements industriels", text: "Dimensionnement et intégration." },
       { title: "Utilités & process", text: "Installations et réseaux d'utilités." },
@@ -114,8 +114,8 @@ const fr: Dict = {
         title: "Ingénierie & Études techniques",
         items: [
           "Piping & réseaux industriels",
-          "Structures métalliques",
-          "Génie civil industriel",
+          "Génie civil industriel & Structures métalliques",
+          "Étude Hazop",
           "Électricité & Instrumentation",
           "Équipements industriels",
           "Utilités & installations process",
@@ -237,8 +237,8 @@ const en: Dict = {
       "An experienced, multidisciplinary team involved from study and design phases through to technical assistance and construction follow-up.",
     domains: [
       { title: "Piping & industrial networks", text: "Design, isometrics and supports." },
-      { title: "Steel structures", text: "Frames, platforms and skeletons." },
-      { title: "Industrial civil works", text: "Foundations, plinths and structures." },
+      { title: "Industrial civil works & Steel structures", text: "Frames, platforms, skeletons, foundations, plinths and structures." },
+      { title: "Hazop Study", text: "Hazard identification, deviation analysis and process risk assessment." },
       { title: "Electrical & Instrumentation", text: "Diagrams, loops and layouts." },
       { title: "Industrial equipment", text: "Sizing and integration." },
       { title: "Utilities & process", text: "Utility installations and networks." },
@@ -264,8 +264,8 @@ const en: Dict = {
         title: "Engineering & Technical studies",
         items: [
           "Piping & industrial networks",
-          "Steel structures",
-          "Industrial civil works",
+          "Industrial civil works & Steel structures",
+          "Hazop Study",
           "Electrical & Instrumentation",
           "Industrial equipment",
           "Utilities & process installations",
