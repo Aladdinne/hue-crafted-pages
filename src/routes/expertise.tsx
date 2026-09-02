@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/i18n/LanguageProvider";
 
 const logoModules = import.meta.glob("../assets/logos/*.{png,jpg,jpeg}", {
   eager: true,
@@ -126,19 +127,18 @@ const otherClients = [
 ];
 
 function Expertise() {
+  const { t } = useLang();
   return (
     <div>
       <section className="brand-gradient pt-36 pb-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <h1 className="text-5xl font-bold uppercase text-navy-foreground md:text-6xl">
-              Expertise & Références
+              {t.expertise.title}
             </h1>
             <div className="rule-accent mt-5" />
             <p className="mt-6 max-w-2xl text-navy-foreground/85">
-              Notre équipe dispose d'une expérience confirmée dans l'utilisation des
-              logiciels métiers les plus exigeants, et notre savoir-faire est reconnu par
-              des clients industriels de premier plan.
+              {t.expertise.intro}
             </p>
           </Reveal>
         </div>
@@ -146,7 +146,7 @@ function Expertise() {
 
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8">
         <Reveal>
-          <h2 className="text-4xl font-bold uppercase">Logiciels maîtrisés</h2>
+          <h2 className="text-4xl font-bold uppercase">{t.expertise.softwareTitle}</h2>
           <div className="rule-accent mt-4" />
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -166,16 +166,15 @@ function Expertise() {
       <section className="steel-gradient">
         <div className="mx-auto max-w-7xl px-5 py-24 md:px-8">
           <Reveal>
-            <h2 className="text-4xl font-bold uppercase">Ils nous font confiance</h2>
+            <h2 className="text-4xl font-bold uppercase">{t.expertise.clientsTitle}</h2>
             <div className="rule-accent mt-4" />
             <p className="mt-6 max-w-2xl text-muted-foreground">
-              Notre expérience acquise auprès des clients suivants témoigne de notre
-              savoir-faire et de notre capacité à répondre aux exigences les plus élevées.
+              {t.expertise.clientsIntro}
             </p>
           </Reveal>
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {clientLogos.map((c, i) => (
-              <Reveal key={c.name} delay={(i % 8) * 60}>
+              <Reveal key={c.src} delay={(i % 8) * 60}>
                 <div className="flex h-24 items-center justify-center rounded-md border border-border bg-card px-5 py-3 transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
                   <img
                     src={c.src}

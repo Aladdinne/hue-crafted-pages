@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Globe } from "lucide-react";
-import logo from "@/assets/souitech-logo.png.asset.json";
+import logo from "@/assets/souitech-logo.png";
 import { useLang } from "@/i18n/LanguageProvider";
 
 export function SiteFooter() {
@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div>
           <div className="inline-flex rounded-md bg-background/95 px-4 py-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="SOUiTECH Engineering"
               width={220}
               height={86}
