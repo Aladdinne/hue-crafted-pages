@@ -69,7 +69,7 @@ const fr: Dict = {
     rights: "SOUiTECH Engineering — MF : 1986248K",
   },
   home: {
-    badge: "Bureau d'études",
+    badge: "Bureau d'études multidisciplinaire",
     titleA: "L'ingénierie au service de la",
     titleB: "performance industrielle",
     intro:
