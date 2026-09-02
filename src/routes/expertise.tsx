@@ -74,7 +74,7 @@ const logoNames: Record<string, string> = {
   "sbtrust.jpeg": "Sbtrust",
   "ps.jpeg": "Ps",
   "clarke.jpeg": "Clarke",
-  "sotuver.jpeg": Sotuver",
+  "sotuver.jpeg": "Sotuver",
 };
 
 const clientLogos = Object.entries(logoModules)
