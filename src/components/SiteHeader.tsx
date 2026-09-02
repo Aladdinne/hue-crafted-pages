@@ -33,7 +33,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src={logo}
             alt="SOUiTECH Engineering"
             width={200}
             height={78}

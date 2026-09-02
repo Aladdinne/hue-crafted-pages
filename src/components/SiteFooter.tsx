@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div>
           <div className="inline-flex rounded-md bg-background/95 px-4 py-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="SOUiTECH Engineering"
               width={220}
               height={86}
