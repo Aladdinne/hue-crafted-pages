@@ -68,6 +68,13 @@ const logoNames: Record<string, string> = {
   "vivo-energy.png": "Vivo Energy Tunisie",
   "wacom.png": "WACOM",
   "zallaf.jpeg": "Zallaf Libya Oil & Gas",
+  "gias.jpeg": "Gias",
+  "smip.jpeg": "Smip",
+  "bma.jpeg": "Bma",
+  "sbtrust.jpeg": "Sbtrust",
+  "ps.jpeg": "Ps",
+  "clarke.jpeg": "Clarke",
+  "sotuver.jpeg": Sotuver",
 };
 
 const clientLogos = Object.entries(logoModules)
