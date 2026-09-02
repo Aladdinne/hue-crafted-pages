@@ -1,4 +1,3 @@
-```tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { Globe, Mail, Phone, FileText } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -179,4 +178,3 @@ function Contact() {
     </div>
   );
 }
-```
