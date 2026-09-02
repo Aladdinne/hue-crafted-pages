@@ -3,9 +3,11 @@ import { Globe, Mail, Phone, FileText } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useLang } from "@/i18n/LanguageProvider";
 import logo from "@/assets/souitech-logo.png";
+
 export const Route = createFileRoute("/contact")({
   component: Contact,
 });
+
 function Contact() {
   const { t } = useLang();
   const coords = [
@@ -24,11 +26,12 @@ function Contact() {
     {
       icon: Globe,
       label: t.contact.web,
-      values: ["[www.souitech.com](https://www.souitech.com)"],
+      values: ["www.souitech.com"],
       hrefs: ["https://www.souitech.com"],
     },
     { icon: FileText, label: t.contact.tax, values: ["MF : 1986248K"], hrefs: [] as string[] },
   ];
+
   return (
     <div>
       <section className="brand-gradient pt-36 pb-20">
@@ -42,6 +45,7 @@ function Contact() {
           </Reveal>
         </div>
       </section>
+
       <section className="mx-auto max-w-6xl px-5 py-24 md:px-8">
         <Reveal>
           <div className="flex justify-center">
@@ -55,6 +59,7 @@ function Contact() {
             />
           </div>
         </Reveal>
+
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {coords.map((c, i) => (
             <Reveal key={c.label} delay={i * 100}>
