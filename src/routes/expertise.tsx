@@ -119,7 +119,7 @@ const software = [
 
 
 const otherClients = [
-  "Lafarge",
+  /*"Lafarge",
   "BIA",
   "Clarke Energy",
   "Sotuver",
@@ -130,7 +130,7 @@ const otherClients = [
   "Vivo Energy Tunisie",
   "SB Trust",
   "Process Safety Engineering",
-  "Cementos Molins",
+  "Cementos Molins",*/
 ];
 
 function Expertise() {
