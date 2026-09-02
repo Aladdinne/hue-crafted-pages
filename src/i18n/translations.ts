@@ -3,7 +3,7 @@ export type Lang = "fr" | "en" | "ar";
 export const LANGS: { code: Lang; label: string; short: string; dir: "ltr" | "rtl" }[] = [
   { code: "fr", label: "Français", short: "FR", dir: "ltr" },
   { code: "en", label: "English", short: "EN", dir: "ltr" },
-  { code: "ar", label: "العربية", short: "ع", dir: "rtl" },
+  //{ code: "ar", label: "العربية", short: "ع", dir: "rtl" },
 ];
 
 export type Dict = {
