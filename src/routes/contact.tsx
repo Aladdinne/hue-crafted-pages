@@ -69,7 +69,7 @@ function Contact() {
                   {c.values.map((v, j) => {
                     const href = c.hrefs[j];
                     return href ? (
-
+                      
                         key={v}
                         href={href}
                         className="block font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
