@@ -38,7 +38,7 @@ function Contact() {
       values: [
         {
           text: "+216 97 686 557",
-          href: "https://wa.me/21697686557",
+          href: "tel:+21697686557",
           whatsapp: true,
         },
         {
@@ -55,7 +55,6 @@ function Contact() {
         {
           text: "riadh.souibgui@souitech.com",
           href: "mailto:riadh.souibgui@souitech.com",
-          whatsapp: false,
         },
       ],
     },
@@ -66,7 +65,6 @@ function Contact() {
         {
           text: "www.souitech.com",
           href: "https://www.souitech.com",
-          whatsapp: false,
         },
       ],
     },
@@ -76,8 +74,6 @@ function Contact() {
       values: [
         {
           text: "MF : 1986248K",
-          href: "",
-          whatsapp: false,
         },
       ],
     },
@@ -123,37 +119,39 @@ function Contact() {
           {coords.map((c, i) => (
             <Reveal key={c.label} delay={i * 100}>
               <article className="card-industrial h-full p-8">
-                {/* Card Icon */}
+                {/* Icon */}
                 <div className="brand-gradient inline-flex rounded-md p-3 text-navy-foreground">
                   <c.icon className="size-6" />
                 </div>
 
-                {/* Card Label */}
+                {/* Label */}
                 <h2 className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   {c.label}
                 </h2>
 
-                {/* Contact Values */}
+                {/* Values */}
                 <div className="mt-3 space-y-3" dir="ltr">
                   {c.values.map((item) => {
+                    const isWhatsapp = item.whatsapp;
+
                     if (item.href) {
                       return (
                         <a
                           key={item.text}
                           href={item.href}
-                          target={item.whatsapp ? "_blank" : undefined}
-                          rel={
-                            item.whatsapp
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
                           className="flex items-center gap-2 font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
                         >
-                          {/* Number / Contact */}
+                          {/* Phone + WhatsApp indicator */}
+                          {isWhatsapp && (
+                            <span className="text-lg leading-none">
+                              📞💬
+                            </span>
+                          )}
+
                           <span>{item.text}</span>
 
-                          {/* WhatsApp Label */}
-                          {item.whatsapp && (
+                          {/* WhatsApp Badge */}
+                          {isWhatsapp && (
                             <span className="rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-green-600">
                               WhatsApp
                             </span>
