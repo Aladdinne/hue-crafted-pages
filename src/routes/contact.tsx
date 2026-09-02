@@ -17,15 +17,24 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
+interface CoordItem {
+  icon: typeof Phone;
+  label: string;
+  values: string[];
+  hrefs: string[];
+  whatsapp?: boolean[];
+}
+
 function Contact() {
   const { t } = useLang();
-  const coords = [
+
+  const coords: CoordItem[] = [
     {
       icon: Phone,
       label: t.contact.phone,
       values: ["+216 97 686 557", "+216 23 740 984"],
       hrefs: ["tel:+21697686557", "tel:+21623740984"],
-      whatsapp: [true, false], // premier numéro = WhatsApp
+      whatsapp: [true, false],
     },
     {
       icon: Mail,
@@ -36,10 +45,15 @@ function Contact() {
     {
       icon: Globe,
       label: t.contact.web,
-      values: ["[www.souitech.com](https://www.souitech.com)"],
+      values: ["www.souitech.com"],
       hrefs: ["https://www.souitech.com"],
     },
-    { icon: FileText, label: t.contact.tax, values: ["MF : 1986248K"], hrefs: [] as string[] },
+    {
+      icon: FileText,
+      label: t.contact.tax,
+      values: ["MF : 1986248K"],
+      hrefs: [],
+    },
   ];
 
   return (
@@ -55,6 +69,7 @@ function Contact() {
           </Reveal>
         </div>
       </section>
+
       <section className="mx-auto max-w-6xl px-5 py-24 md:px-8">
         <Reveal>
           <div className="flex justify-center">
@@ -68,44 +83,53 @@ function Contact() {
             />
           </div>
         </Reveal>
+
         <div className="mt-16 grid gap-6 md:grid-cols-2">
-          {coords.map((c, i) => (
-            <Reveal key={c.label} delay={i * 100}>
-              <article className="card-industrial h-full p-8">
-                <div className="brand-gradient inline-flex rounded-md p-3 text-navy-foreground">
-                  <c.icon className="size-6" />
-                </div>
-                <h2 className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {c.label}
-                </h2>
-                <div className="mt-3 space-y-1.5" dir="ltr">
-                  {c.values.map((v, j) => {
-                    const href = c.hrefs[j];
-                    const isWhatsapp = c.whatsapp?.[j];
-                    return href ? (
-                      
-                        key={v}
-                        href={href}
-                        className="flex items-center gap-2 font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
-                      >
-                        {v}
-                        {isWhatsapp && (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-[#25D366]/15 px-2 py-0.5 text-xs font-medium text-[#25D366]">
-                            <WhatsAppIcon className="size-3.5" />
-                            WhatsApp
-                          </span>
-                        )}
-                      </a>
-                    ) : (
-                      <p key={v} className="font-display text-xl font-semibold md:text-2xl">
-                        {v}
-                      </p>
-                    );
-                  })}
-                </div>
-              </article>
-            </Reveal>
-          ))}
+          {coords.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <Reveal key={c.label} delay={i * 100}>
+                <article className="card-industrial h-full p-8">
+                  <div className="brand-gradient inline-flex rounded-md p-3 text-navy-foreground">
+                    <Icon className="size-6" />
+                  </div>
+                  <h2 className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                    {c.label}
+                  </h2>
+                  <div className="mt-3 space-y-1.5" dir="ltr">
+                    {c.values.map((v, j) => {
+                      const href = c.hrefs[j];
+                      const isWhatsapp = c.whatsapp ? c.whatsapp[j] : false;
+
+                      if (href) {
+                        return (
+                          
+                            key={v}
+                            href={href}
+                            className="flex items-center gap-2 font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
+                          >
+                            {v}
+                            {isWhatsapp && (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-[#25D366]/15 px-2 py-0.5 text-xs font-medium text-[#25D366]">
+                                <WhatsAppIcon className="size-3.5" />
+                                WhatsApp
+                              </span>
+                            )}
+                          </a>
+                        );
+                      }
+
+                      return (
+                        <p key={v} className="font-display text-xl font-semibold md:text-2xl">
+                          {v}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
     </div>
