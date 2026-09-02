@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Globe, Mail, Phone, FileText } from "lucide-react";
+import { Globe, Mail, Phone, FileText, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useLang } from "@/i18n/LanguageProvider";
 import logo from "@/assets/souitech-logo.png";
-
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -11,7 +10,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Coordonnées de SOUiTECH Engineering : téléphone +216 97 686 557 / +216 23 740 984, email riadh.souibgui@souitech.com, www.souitech.com.",
+          "Coordonnées de SOUiTECH Engineering : téléphone +216 97 686 557 / +216 23 740 984, email riadh.souibgui@souitech.com, [www.souitech.com](https://www.souitech.com).",
       },
       { property: "og:title", content: "Contact — SOUiTECH Engineering" },
       {
@@ -22,32 +21,38 @@ export const Route = createFileRoute("/contact")({
   }),
   component: Contact,
 });
-
 function Contact() {
   const { t } = useLang();
-
   const coords = [
     {
       icon: Phone,
       label: t.contact.phone,
       values: ["+216 97 686 557", "+216 23 740 984"],
       hrefs: ["tel:+21697686557", "tel:+21623740984"],
+      whatsapp: ["https://wa.me/21697686557", null] as (string | null)[],
     },
     {
       icon: Mail,
       label: t.contact.email,
       values: ["riadh.souibgui@souitech.com"],
       hrefs: ["mailto:riadh.souibgui@souitech.com"],
+      whatsapp: [null] as (string | null)[],
     },
     {
       icon: Globe,
       label: t.contact.web,
-      values: ["www.souitech.com"],
+      values: ["[www.souitech.com](https://www.souitech.com)"],
       hrefs: ["https://www.souitech.com"],
+      whatsapp: [null] as (string | null)[],
     },
-    { icon: FileText, label: t.contact.tax, values: ["MF : 1986248K"], hrefs: [] as string[] },
+    {
+      icon: FileText,
+      label: t.contact.tax,
+      values: ["MF : 1986248K"],
+      hrefs: [] as string[],
+      whatsapp: [null] as (string | null)[],
+    },
   ];
-
   return (
     <div>
       <section className="brand-gradient pt-36 pb-20">
@@ -61,7 +66,6 @@ function Contact() {
           </Reveal>
         </div>
       </section>
-
       <section className="mx-auto max-w-6xl px-5 py-24 md:px-8">
         <Reveal>
           <div className="flex justify-center">
@@ -75,7 +79,6 @@ function Contact() {
             />
           </div>
         </Reveal>
-
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {coords.map((c, i) => (
             <Reveal key={c.label} delay={i * 100}>
@@ -89,18 +92,32 @@ function Contact() {
                 <div className="mt-3 space-y-1.5" dir="ltr">
                   {c.values.map((v, j) => {
                     const href = c.hrefs[j];
-                    return href ? (
-                      <a
-                        key={v}
-                        href={href}
-                        className="block font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
-                      >
-                        {v}
-                      </a>
-                    ) : (
-                      <p key={v} className="font-display text-xl font-semibold md:text-2xl">
-                        {v}
-                      </p>
+                    const wa = c.whatsapp?.[j];
+                    return (
+                      <div key={v} className="flex items-center gap-2">
+                        {href ? (
+                          
+                            href={href}
+                            className="block font-display text-xl font-semibold transition-colors hover:text-accent md:text-2xl"
+                          >
+                            {v}
+                          </a>
+                        ) : (
+                          <p className="font-display text-xl font-semibold md:text-2xl">{v}</p>
+                        )}
+                        {wa && (
+                          
+                            href={wa}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="WhatsApp"
+                            aria-label="Contacter sur WhatsApp"
+                            className="inline-flex items-center justify-center rounded-full bg-[#25D366]/10 p-1.5 text-[#25D366] transition-colors hover:bg-[#25D366]/20"
+                          >
+                            <MessageCircle className="size-4" />
+                          </a>
+                        )}
+                      </div>
                     );
                   })}
                 </div>
