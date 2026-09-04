@@ -82,7 +82,7 @@ function Contact() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="brand-gradient pt-36 pb-20">
+      <section className="brand-gradients pt-36 pb-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <h1 className="text-5xl font-bold uppercase text-navy-foreground md:text-6xl">
