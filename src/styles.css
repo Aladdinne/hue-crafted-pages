@@ -70,6 +70,7 @@
   --primary-foreground: oklch(0.98 0.005 250);
   --navy: oklch(0.32 0.13 264);
   --navy-deep: oklch(0.21 0.09 265);
+  --sky-blue: oklch(0.78 0.18 215);
   --navy-foreground: oklch(0.98 0.005 250);
 
   /* Rouge bordeaux */
