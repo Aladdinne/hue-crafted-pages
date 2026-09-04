@@ -109,6 +109,7 @@
 
   /* Brand gradients & shadows */
   --gradient-brand: linear-gradient(120deg, var(--navy-deep) 0%, var(--navy) 45%, var(--accent) 130%);
+  --gradient-brands: linear-gradient(120deg, var(--sky-blue) 0%, var(--navy) 45%, var(--accent) 130%);
   --gradient-steel: linear-gradient(135deg, oklch(0.97 0.005 250), oklch(0.9 0.012 252));
   --gradient-accent-line: linear-gradient(90deg, var(--navy) 0%, var(--accent) 100%);
   --shadow-elevated: 0 24px 60px -28px color-mix(in oklab, var(--navy) 55%, transparent);
@@ -141,6 +142,10 @@
   background-image: var(--gradient-brand);
 }
 
+@utility brand-gradients {
+  background-image: var(--gradient-brands);
+}
+
 @utility steel-gradient {
   background-image: var(--gradient-steel);
 }
@@ -153,6 +158,12 @@
 }
 
 @utility text-gradient-brand {
+  background-image: var(--gradient-accent-line);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-brands {
   background-image: var(--gradient-accent-line);
   background-clip: text;
   color: transparent;
