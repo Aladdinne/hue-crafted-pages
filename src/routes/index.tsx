@@ -34,7 +34,7 @@ function Home() {
           height={1088}
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,color-mix(in_oklab,var(--navy-deep)_92%,transparent)_0%,color-mix(in_oklab,var(--navy)_75%,transparent)_48%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,color-mix(in_oklab,var(--sky-blue)_92%,transparent)_0%,color-mix(in_oklab,var(--navy)_75%,transparent)_48%,transparent_100%)]" />
         <div className="relative mx-auto w-full max-w-7xl px-5 pt-28 md:px-8">
           <Reveal>
             <span className="inline-block rounded-full border border-navy-foreground/25 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-navy-foreground/85">
