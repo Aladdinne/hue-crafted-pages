@@ -72,7 +72,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="brand-gradient">
+      <section className="brand-gradients">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-12 md:grid-cols-4 md:px-8">
           {statValues.map((value, i) => (
             <Reveal key={value} delay={i * 90}>
