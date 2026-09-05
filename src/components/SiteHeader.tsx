@@ -35,9 +35,9 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="SOUiTECH Engineering"
-            width={200}
+            width={220}
             height={78}
-            className="h-11 w-auto md:h-13"
+            className="md:h-13"
           />
         </Link>
 
