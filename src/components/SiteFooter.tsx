@@ -70,6 +70,10 @@ export function SiteFooter() {
               <span dir="ltr">riadh.souibgui@souitech.com</span>
             </li>
             <li className="flex items-center gap-3">
+              <Mail className="size-4 shrink-0" />
+              <span dir="ltr">contact.administratif@souitech.com</span>
+            </li>
+            <li className="flex items-center gap-3">
               <Globe className="size-4 shrink-0" />
               <span dir="ltr">www.souitech.com</span>
             </li>
