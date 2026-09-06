@@ -56,6 +56,10 @@ function Contact() {
           text: "riadh.souibgui@souitech.com",
           href: "mailto:riadh.souibgui@souitech.com",
         },
+        {
+          text: "contact.administratif@souitech.com",
+          href: "mailto:contact.administratif@souitech.com",
+        },
       ],
     },
     {
