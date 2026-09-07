@@ -7,7 +7,7 @@ export function SiteFooter() {
   const { t } = useLang();
 
   return (
-    <footer className="brand-gradient text-navy-foreground">
+    <footer className="brand-gradients text-navy-foreground">
       <div className="h-1 sheen-line" />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3 md:px-8">
         <div>
